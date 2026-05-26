@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogi Panggabean &mdash; Marine Scientist &amp; Researcher</title>
+  <meta name="description" content="Marine Science graduate from Universitas Padjajaran. 11 published papers, two Scopus Q2. Researcher in oceanography, climate change, and coastal sustainability." />
+
+  <!-- Satoshi via Fontshare CDN -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+
+  <!-- Three.js — local copy r160 -->
+  <script src="three.min.js" defer></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fixed full-screen 3D canvas — sits behind everything -->
+  <canvas id="journey-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav class="global-nav" id="global-nav">
+    <div class="nav-inner">
+      <a href="#ch-hero" class="nav-logo">JP</a>
+      <ul class="nav-links">
+        <li><a href="#ch-about">About</a></li>
+        <li><a href="#ch-education">Education</a></li>
+        <li><a href="#ch-experience">Experience</a></li>
+        <li><a href="#ch-research">Research</a></li>
+        <li><a href="#ch-awards">Awards</a></li>
+        <li><a href="#ch-contact">Contact</a></li>
+      </ul>
+      <a href="mailto:jogipanggabeann@gmail.com" class="btn-primary nav-cta">Get in Touch</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#ch-about">About</a></li>
+        <li><a href="#ch-education">Education</a></li>
+        <li><a href="#ch-experience">Experience</a></li>
+        <li><a href="#ch-research">Research</a></li>
+        <li><a href="#ch-awards">Awards</a></li>
+        <li><a href="#ch-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Chapter progress dots — fixed right edge -->
+  <nav class="journey-progress" aria-label="Journey chapters">
+    <button class="j-dot active" data-target="#ch-hero"       aria-label="Hero"></button>
+    <button class="j-dot"        data-target="#ch-about"      aria-label="About"></button>
+    <button class="j-dot"        data-target="#ch-education"  aria-label="Education"></button>
+    <button class="j-dot"        data-target="#ch-experience" aria-label="Experience"></button>
+    <button class="j-dot"        data-target="#ch-research"   aria-label="Research"></button>
+    <button class="j-dot"        data-target="#ch-awards"     aria-label="Awards"></button>
+    <button class="j-dot"        data-target="#ch-contact"    aria-label="Contact"></button>
+  </nav>
+
+  <!-- Journey: 7 chapters × 100 vh = 700 vh total scroll space -->
+  <main id="journey">
+
+    <!-- ══════════════════════════════════════════
+         Ch 0 — HERO
+         Full overview of all rings. Name centered
+         over the globe + orbital rings.
+         ══════════════════════════════════════════ -->
+    <section class="chapter ch-hero-section" id="ch-hero">
+      <div id="hero-text" class="hero-text">
+        <p class="hero-label">Marine Scientist &nbsp;&middot;&nbsp; Researcher &nbsp;&middot;&nbsp; Leader</p>
+        <h1 class="hero-display">Jogi Ruben<br>Natanael<br>Panggabean</h1>
+        <p class="hero-sub">Studying the ocean to protect the coasts.<br>Turning data into solutions for Indonesia&rsquo;s climate future.</p>
+        <div class="hero-ctas">
+          <a href="#ch-research" class="btn-primary">View Research</a>
+          <a href="#ch-contact" class="btn-ghost">Say Hello</a>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll to explore</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Ch 1 — ABOUT
+         Camera zooms toward ring 1. Bio panel left.
+         ══════════════════════════════════════════ -->
+    <section class="chapter" id="ch-about">
+      <div class="ch-panel ch-left">
+        <p class="ch-label">About</p>
+        <h2 class="ch-title">Fresh eyes on<br>old problems.</h2>
+
+        <div class="about-row">
+          <img src="images/dscf6078-main.jpg" alt="Jogi Ruben Natanael Panggabean" class="ch-portrait" />
+          <div class="about-bio">
+            <p>Marine Science graduate from Universitas Padjajaran, Bandung &mdash; working at the intersection of physical oceanography, climate variability, and what that means for communities along Indonesia&rsquo;s coastlines.</p>
+            <p>Field work in Sukabumi and Lampung. Exchange at ITB. NUS Singapore fellowship. Eleven peer reviewed papers &mdash; two Scopus Q2 &mdash; mostly before finishing my undergraduate degree.</p>
+          </div>
+        </div>
+
+        <div class="ch-stats">
+          <div class="ch-stat">
+            <span class="ch-stat-num">11</span>
+            <span class="ch-stat-lbl">Published papers</span>
+          </div>
+          <div class="ch-stat">
+            <span class="ch-stat-num">2&times;</span>
+            <span class="ch-stat-lbl">Scopus Q2</span>
+          </div>
+          <div class="ch-stat">
+            <span class="ch-stat-num">3.61</span>
+            <span class="ch-stat-lbl">GPA</span>
+          </div>
+          <div class="ch-stat">
+            <span class="ch-stat-num">7.5</span>
+            <span class="ch-stat-lbl">IELTS</span>
+          </div>
+        </div>
+
+        <div class="ch-chips">
+          <span class="chip">Oceanography</span>
+          <span class="chip">Climate Change</span>
+          <span class="chip">Marine Conservation</span>
+          <span class="chip">Coastal Resilience</span>
+          <span class="chip">Disaster Mitigation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Ch 2 — EDUCATION
+         Ring 1 at steep angle. Panel right.
+         ══════════════════════════════════════════ -->
+    <section class="chapter" id="ch-education">
+      <div class="ch-panel ch-right">
+        <p class="ch-label">Education</p>
+        <h2 class="ch-title">Built to learn<br>everywhere.</h2>
+
+        <div class="ch-edu-list">
+
+          <div class="ch-edu-item ch-edu-featured">
+            <div class="ch-edu-header">
+              <span class="edu-badge badge-main">Alma Mater</span>
+              <span class="ch-edu-period">2022 &ndash; 2025</span>
+            </div>
+            <h3 class="ch-edu-inst">Universitas Padjajaran</h3>
+            <p class="ch-edu-degree">Bachelor&rsquo;s in Marine Science &middot; GPA 3.61</p>
+            <p class="ch-edu-note">Most Outstanding Student FPIK Unpad 2025 &middot; Valedictorian of the 2022 Marine Science cohort</p>
+          </div>
+
+          <div class="ch-edu-item">
+            <div class="ch-edu-header">
+              <span class="edu-badge badge-exchange">Exchange</span>
+              <span class="ch-edu-period">Sep 2024 &ndash; Jan 2025</span>
+            </div>
+            <h3 class="ch-edu-inst">Institut Teknologi Bandung</h3>
+            <p class="ch-edu-degree">Student Exchange &middot; Oceanography &middot; GPA 3.74</p>
+            <p class="ch-edu-note">17 credits on Climate Change in Coastal Environments &middot; 4 field studies in Sukabumi and Lampung</p>
+          </div>
+
+          <div class="ch-edu-item">
+            <div class="ch-edu-header">
+              <span class="edu-badge badge-intl">International</span>
+              <span class="ch-edu-period">Jun 2025 &ndash; Aug 2025</span>
+            </div>
+            <h3 class="ch-edu-inst">National University of Singapore</h3>
+            <p class="ch-edu-degree">Young Fellowship &mdash; Gen AI &amp; Environment</p>
+            <p class="ch-edu-note">10 AI lectures &middot; 5 environmental research lab visits</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Ch 3 — EXPERIENCE + LEADERSHIP
+         Camera zooms into ring 2. Panel left.
+         ══════════════════════════════════════════ -->
+    <section class="chapter" id="ch-experience">
+      <div class="ch-panel ch-left">
+        <p class="ch-label">Experience &amp; Leadership</p>
+        <h2 class="ch-title">Science meets<br>real world impact.</h2>
+
+        <div class="ch-exp-list">
+          <div class="ch-exp-item">
+            <span class="ch-exp-period">Jan 2026 &ndash; Apr 2026</span>
+            <div class="ch-exp-body">
+              <h4 class="ch-exp-role">Head of Laboratory &amp; COO</h4>
+              <p class="ch-exp-org">Torgas Blue Energy</p>
+              <p class="ch-exp-desc">Created and led Torgas Laboratory, building integrated systems for industry driven training and applied energy research from the ground up.</p>
+            </div>
+          </div>
+          <div class="ch-exp-item">
+            <span class="ch-exp-period">Feb 2025 &ndash; Jul 2025</span>
+            <div class="ch-exp-body">
+              <h4 class="ch-exp-role">MBKM Research Intern</h4>
+              <p class="ch-exp-org">BRIN &mdash; Climate &amp; Atmosphere Division</p>
+              <p class="ch-exp-desc">Managed rainfall and upwelling datasets. Developed environment based solutions for flood early warning in West Java.</p>
+            </div>
+          </div>
+          <div class="ch-exp-item">
+            <span class="ch-exp-period">Sep 2022 &ndash; Jan 2024</span>
+            <div class="ch-exp-body">
+              <h4 class="ch-exp-role">Research Assistant</h4>
+              <p class="ch-exp-org">Torgas TORALAB &mdash; under Dr. Buntora Pasaribu, PhD</p>
+              <p class="ch-exp-desc">Gas conversion experiments recognized as one of Indonesia&rsquo;s 115 best innovations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ch-divider"></div>
+
+        <div class="ch-org-list">
+          <div class="ch-org-item">
+            <div>
+              <h4>Chairperson &mdash; BEM FPIK Unpad</h4>
+              <p>Jan 2025 &ndash; Present</p>
+            </div>
+          </div>
+          <div class="ch-org-item">
+            <div>
+              <h4>Head of Internal Division &mdash; HIMAIKA UNPAD</h4>
+              <p>Jan 2024 &ndash; Dec 2024 &middot; 40 staff across 6 departments</p>
+            </div>
+          </div>
+          <div class="ch-org-item">
+            <div>
+              <h4>Project Supervisor &mdash; PRABU UNPAD 2024</h4>
+              <p>Mar 2024 &ndash; Aug 2024 &middot; 8,000 students, 900 staff</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Ch 4 — RESEARCH
+         Ring 2 angle, ring 3 ahead. Panel right.
+         ══════════════════════════════════════════ -->
+    <section class="chapter" id="ch-research">
+      <div class="ch-panel ch-right">
+        <p class="ch-label">Research</p>
+        <h2 class="ch-title">Eleven papers.<br>One throughline.</h2>
+        <p class="ch-sub">Two Scopus Q2 (Taylor &amp; Francis &amp; MDPI) &middot; Mostly first author &middot; 2025&ndash;2026</p>
+
+        <div class="ch-pub-grid">
+
+          <a class="ch-pub" href="https://doi.org/10.35876/ijop.v8i1.138" target="_blank" rel="noopener">
+            <span class="ch-pub-num">01</span>
+            <span class="ch-pub-title">Sea Level Rise Impacts on Coastal Oil Palm Plantations</span>
+            <span class="pub-index">IJOP</span>
+          </a>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">02</span>
+            <span class="ch-pub-title">Interannual Climate Variability: Rainfall Extremes and Flooding in Bandung</span>
+            <span class="pub-index">Q4</span>
+          </div>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">03</span>
+            <span class="ch-pub-title">Climate Security Nexus: ENSO Driven Rainfall Variability and Maritime Security</span>
+            <span class="pub-index">Military</span>
+          </div>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">04</span>
+            <span class="ch-pub-title">Satellite Based Atmospheric Monitoring for Smart Cities in Indonesia</span>
+            <span class="pub-index">Sinta 4</span>
+          </div>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">05</span>
+            <span class="ch-pub-title">Community Based Ecosystem Governance for Marine Food Security</span>
+            <span class="pub-index">JIMU</span>
+          </div>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">06</span>
+            <span class="ch-pub-title">Environment Responsive Smart Materials Based on West Java Climate Data</span>
+            <span class="pub-index">Sinta 5</span>
+          </div>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">07</span>
+            <span class="ch-pub-title">Wind Rain Synergy System for Multi Source Maritime Renewable Energy</span>
+            <span class="pub-index">Sinta 4</span>
+          </div>
+
+          <a class="ch-pub ch-pub-q2" href="https://doi.org/10.1080/27669645.2026.2630800" target="_blank" rel="noopener">
+            <span class="ch-pub-num">08</span>
+            <span class="ch-pub-title">Multidecadal Ocean Heat Content Variability &mdash; Southeastern Indian Ocean</span>
+            <span class="pub-index q2">Scopus Q2</span>
+          </a>
+
+          <a class="ch-pub ch-pub-q2" href="https://doi.org/10.3390/fishes11040230" target="_blank" rel="noopener">
+            <span class="ch-pub-num">09</span>
+            <span class="ch-pub-title">Socio Economic Patterns of Multi Gear Artisanal Fisheries &mdash; Pangandaran</span>
+            <span class="pub-index q2">Scopus Q2</span>
+          </a>
+
+          <a class="ch-pub" href="https://doi.org/10.31851/jupiter.v7i2.19665" target="_blank" rel="noopener">
+            <span class="ch-pub-num">10</span>
+            <span class="ch-pub-title">Topographic Enhancement of Extreme Rainfall &mdash; IKN Nusantara</span>
+            <span class="pub-index">Sinta 4</span>
+          </a>
+
+          <div class="ch-pub">
+            <span class="ch-pub-num">11</span>
+            <span class="ch-pub-title">Ocean Atmosphere Coupling: Precipitation Chlorophyll Lag in West Java</span>
+            <span class="pub-index">Sinta 4</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Ch 5 — AWARDS + SKILLS
+         Deep into ring 3. Panel left, split layout.
+         ══════════════════════════════════════════ -->
+    <section class="chapter" id="ch-awards">
+      <div class="ch-panel ch-left ch-wide">
+        <p class="ch-label">Awards &amp; Skills</p>
+        <h2 class="ch-title">Tested in the arena,<br>not just the classroom.</h2>
+
+        <div class="ch-awards-skills">
+
+          <div class="ch-awards-col">
+            <div class="ch-award">
+              <span class="award-rank-badge gold">Selected Article</span>
+              <p>Piagam Penghargaan Gubernur Jawa Barat &mdash; WJRS 2025</p>
+              <span class="ch-award-sub">Signed by Gov. Dedi Mulyadi &middot; Nov 2025 &middot; No. 002.6/Kep.774</span>
+            </div>
+            <div class="ch-award">
+              <span class="award-rank-badge gold">1st Place</span>
+              <p>IJOP Paper Competition &mdash; Science Technopark IPB Bogor</p>
+              <span class="ch-award-sub">July 2025</span>
+            </div>
+            <div class="ch-award">
+              <span class="award-rank-badge gold">1st Place</span>
+              <p>LKTIN SPEAR MSC &mdash; Universitas Jember &middot; Score 247.3</p>
+              <span class="ch-award-sub">October 2025</span>
+            </div>
+            <div class="ch-award">
+              <span class="award-rank-badge gold">1st Place</span>
+              <p>Siaga Award &mdash; SPMKB Universitas Islam Indonesia</p>
+              <span class="ch-award-sub">2025</span>
+            </div>
+            <div class="ch-award">
+              <span class="award-rank-badge silver">2nd Place</span>
+              <p>International Students Competition &mdash; Universitas Mataram</p>
+              <span class="ch-award-sub">September 2025 &middot; Smart Marine Technology</span>
+            </div>
+            <div class="ch-award">
+              <span class="award-rank-badge bronze">3rd Place</span>
+              <p>Sampan Marine Competition &mdash; ITS Surabaya</p>
+              <span class="ch-award-sub">September 2025</span>
+            </div>
+          </div>
+
+          <div class="ch-skills-col">
+            <div class="ch-skill-group">
+              <h4>Field &amp; Lab</h4>
+              <p>Field Research &middot; Biodiversity Monitoring &middot; Lab Protocols &middot; Experimental Design &middot; Open Water Diver (SSI)</p>
+            </div>
+            <div class="ch-skill-group">
+              <h4>Analysis &amp; Tools</h4>
+              <p>Statistical Analysis &middot; QGIS &middot; ArcGIS &middot; MATLAB &middot; Python &middot; Scientific Reporting</p>
+            </div>
+            <div class="ch-skill-group">
+              <h4>Leadership</h4>
+              <p>Team Management (40+ staff) &middot; Strategic Planning &middot; Environmental Policy Assessment</p>
+            </div>
+            <div class="ch-skill-group">
+              <h4>Languages</h4>
+              <p>Indonesian (Native) &middot; English IELTS 7.5 &middot; German (Beginner)</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         Ch 6 — CONTACT
+         Camera zooms way out — all rings visible,
+         full starfield. Panel centered.
+         ══════════════════════════════════════════ -->
+    <section class="chapter" id="ch-contact">
+      <div class="ch-panel ch-center">
+        <p class="ch-label">Contact</p>
+        <h2 class="ch-title">Let&rsquo;s work on<br>something meaningful.</h2>
+        <p class="ch-sub">Open to research collaborations, internship opportunities, and conversations about ocean science and climate policy. Don&rsquo;t hesitate.</p>
+
+        <div class="ch-contact-links">
+
+          <a href="mailto:jogipanggabeann@gmail.com" class="ch-contact-item">
+            <div class="ch-contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="ch-contact-detail">
+              <span class="ch-contact-lbl">Email</span>
+              <span class="ch-contact-val">jogipanggabeann@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/jogi-panggabean/" target="_blank" rel="noopener" class="ch-contact-item">
+            <div class="ch-contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="ch-contact-detail">
+              <span class="ch-contact-lbl">LinkedIn</span>
+              <span class="ch-contact-val">jogi-panggabean</span>
+            </div>
+          </a>
+
+          <div class="ch-contact-item">
+            <div class="ch-contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ch-contact-detail">
+              <span class="ch-contact-lbl">Phone / WhatsApp</span>
+              <span class="ch-contact-val">+62 811 6182 612</span>
+            </div>
+          </div>
+
+          <div class="ch-contact-item">
+            <div class="ch-contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="ch-contact-detail">
+              <span class="ch-contact-lbl">Location</span>
+              <span class="ch-contact-val">Bandung, West Java, Indonesia</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ch-contact-photo">
+          <img src="images/moment-friend.jpg" alt="Jogi Ruben Natanael Panggabean" />
+          <img src="images/grad2.jpg" alt="Graduation portrait" />
+        </div>
+
+        <p class="ch-footer-note">&copy; 2026 Jogi Ruben Natanael Panggabean &middot; Bandung, Indonesia</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="orbital-journey.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
